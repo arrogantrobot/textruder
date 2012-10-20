@@ -1,0 +1,7 @@
+*.sw?
+*.o
+*.a
+textruder
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
