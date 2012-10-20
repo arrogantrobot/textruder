@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Feeder/Feeder.h"
 #include "Nozzle/Nozzle.h"
+#include "Nozzle/CellularAutomaton.h"
 
 class Textruder {
 public:

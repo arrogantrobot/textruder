@@ -3,7 +3,7 @@
 Textruder::Textruder(std::istream *in, std::ostream *out, int width) {
     input = in;
     output = out;
-    nozzle = new Nozzle(width);
+    nozzle = new CellularAutomaton(width);
     feeder = new Feeder(input);
 }
 

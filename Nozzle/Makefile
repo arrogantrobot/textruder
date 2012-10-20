@@ -109,6 +109,30 @@ Nozzle/fast:
 	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/build
 .PHONY : Nozzle/fast
 
+CellularAutomaton.o: CellularAutomaton.cpp.o
+.PHONY : CellularAutomaton.o
+
+# target to build an object file
+CellularAutomaton.cpp.o:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/CellularAutomaton.cpp.o
+.PHONY : CellularAutomaton.cpp.o
+
+CellularAutomaton.i: CellularAutomaton.cpp.i
+.PHONY : CellularAutomaton.i
+
+# target to preprocess a source file
+CellularAutomaton.cpp.i:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/CellularAutomaton.cpp.i
+.PHONY : CellularAutomaton.cpp.i
+
+CellularAutomaton.s: CellularAutomaton.cpp.s
+.PHONY : CellularAutomaton.s
+
+# target to generate assembly for a file
+CellularAutomaton.cpp.s:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/CellularAutomaton.cpp.s
+.PHONY : CellularAutomaton.cpp.s
+
 Nozzle.o: Nozzle.cpp.o
 .PHONY : Nozzle.o
 
@@ -142,6 +166,9 @@ help:
 	@echo "... Nozzle"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CellularAutomaton.o"
+	@echo "... CellularAutomaton.i"
+	@echo "... CellularAutomaton.s"
 	@echo "... Nozzle.o"
 	@echo "... Nozzle.i"
 	@echo "... Nozzle.s"
