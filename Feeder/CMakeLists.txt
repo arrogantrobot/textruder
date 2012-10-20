@@ -1,2 +1,2 @@
-add_library(textruder
-    Textruder.cpp)
+add_library(Feeder
+    Feeder.cpp)

@@ -1,10 +1,11 @@
 cmake_minimum_required (VERSION 2.6)
-project (clodca)
+project (textruder)
 add_subdirectory(CellularAutomaton)
-add_subdirectory(textruder)
-add_executable(clodca clodca.cpp ClodcaOutput.cpp)
-target_link_libraries(clodca 
+add_subdirectory(Feeder)
+add_subdirectory(Nozzle)
+add_executable(textruder main.cpp Textruder.cpp)
+target_link_libraries(textruder 
     cellular_automaton
-    textruder
-    ncurses    
+    Feeder
+    Nozzle
 )
