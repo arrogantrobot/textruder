@@ -1,44 +1,45 @@
 #include "Feeder.h"
 
-Feeder::Feeder(std::string file) {
-    textFile = file;
-    load();
-}
-
 Feeder::~Feeder() {}
 
-void Feeder::load() {
-    std::ifstream incoming(textFile.c_str());
-    if (incoming.is_open()) {
-        std::string line;
-        while (incoming.good()) {
-            getline(incoming, line);
-            addLine(line);
-        }
-        incoming.close();
+/*void Feeder::load() {
+    std::string line;
+    if (input.good()) {
+        getline(input, line);
+        addLine(line);
     } else {
-        throw 1;
+        endOfInput = true;
     }
+}*/
 
-}
-
-void Feeder::addLine(const std::string& line) {
-    unsigned int length = line.length();
-    for (unsigned int i = 0; i < length; i++) {
-        char a = line[i];
-        switch(a) {
-            case '\t':
-            case '\n':
-                        break;
-            default:    text.push_back(a);
-                        break;
+void Feeder::load() {//const std::string& line) {
+    int read_ahead = READ_AHEAD;
+    for (unsigned int i = 0; i < read_ahead; i++) {
+        if (!input->eof()) {
+            char a;
+            input->get(a);
+            switch(a) {
+                case '\t':
+                case '\n':
+                            break;
+                default:    text.push(a);
+                            break;
+            }
+        } else {
+            endOfInput = true;
         }
     }
 }
 
 char Feeder::getChar() {
-    if (idx >= text.size()) {
-        idx = 0;
+    if (text.empty()) {
+        load();
     }
-    return text[idx++];
+    char a = text.front();
+    text.pop();
+    return  a;
+}
+
+bool Feeder::isEndOfInput() {
+    return endOfInput;
 }

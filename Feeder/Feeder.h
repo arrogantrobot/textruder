@@ -1,20 +1,26 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include <fstream>
-#include <vector>
+#include <queue>
+
+#define READ_AHEAD 100;
 
 class Feeder {
 public:
-    Feeder(std::string file);
+    Feeder(std::istream *in){ 
+        endOfInput = false; 
+        input = in;
+    };
     ~Feeder();
     char getChar();
-    void addLine(const std::string& line);
-    bool isLoaded();
-    void load();
+    //void addLine(const std::string& line);
+    bool isEndOfInput();
 
 private:
-    std::vector<char> text;
-    int idx;
-    std::string textFile;
+    std::queue<char> text;
+    std::istream *input;
+    bool endOfInput;
+    void load();
 };

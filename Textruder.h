@@ -6,12 +6,16 @@
 
 class Textruder {
 public:
-    Textruder(std::string file, int width);
+    Textruder(std::istream *in, std::ostream *out, int width);
     ~Textruder();
+    void run();
 
 private:
+    std::istream *input;
+    std::ostream *output;
     Feeder *feeder;
     Nozzle *nozzle;
     char getChar();
     void printRow(const std::vector<int>& row);
+    void initialize(int width);
 };

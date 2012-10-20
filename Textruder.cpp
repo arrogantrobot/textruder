@@ -1,9 +1,14 @@
 #include "Textruder.h"
 
-Textruder::Textruder(std::string file, int width) {
+Textruder::Textruder(std::istream *in, std::ostream *out, int width) {
+    input = in;
+    output = out;
     nozzle = new Nozzle(width);
-    feeder = new Feeder(file);
-    while (37) {
+    feeder = new Feeder(input);
+}
+
+void Textruder::run() {
+    while (!feeder->isEndOfInput()) {
         printRow(nozzle->getRow());
         //usleep(50000);
     }
@@ -19,9 +24,9 @@ Textruder::~Textruder() {
 void Textruder::printRow(const std::vector<int>& row) {
     for (int i = 0; i < row.size(); i++) {
         char answer = (row[i]) ? getChar() : ' ';
-        std::cout << answer;
+        *output << answer;
     }   
-    std::cout << std::endl;
+    *output << std::endl;
 }   
 
 char Textruder::getChar() {
