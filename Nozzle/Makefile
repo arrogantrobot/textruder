@@ -66,14 +66,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/robespierre/git/textruder && $(CMAKE_COMMAND) -E cmake_progress_start /home/robespierre/git/textruder/CMakeFiles /home/robespierre/git/textruder/Feeder/CMakeFiles/progress.marks
-	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Feeder/all
+	cd /home/robespierre/git/textruder && $(CMAKE_COMMAND) -E cmake_progress_start /home/robespierre/git/textruder/CMakeFiles /home/robespierre/git/textruder/Nozzle/CMakeFiles/progress.marks
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Nozzle/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/robespierre/git/textruder/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Feeder/clean
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Nozzle/clean
 .PHONY : clean
 
 # The main clean target
@@ -82,12 +82,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Feeder/preinstall
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Nozzle/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Feeder/preinstall
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Nozzle/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -96,42 +96,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Feeder/CMakeFiles/Feeder.dir/rule:
-	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Feeder/CMakeFiles/Feeder.dir/rule
-.PHONY : Feeder/CMakeFiles/Feeder.dir/rule
+Nozzle/CMakeFiles/Nozzle.dir/rule:
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 Nozzle/CMakeFiles/Nozzle.dir/rule
+.PHONY : Nozzle/CMakeFiles/Nozzle.dir/rule
 
 # Convenience name for target.
-Feeder: Feeder/CMakeFiles/Feeder.dir/rule
-.PHONY : Feeder
+Nozzle: Nozzle/CMakeFiles/Nozzle.dir/rule
+.PHONY : Nozzle
 
 # fast build rule for target.
-Feeder/fast:
-	cd /home/robespierre/git/textruder && $(MAKE) -f Feeder/CMakeFiles/Feeder.dir/build.make Feeder/CMakeFiles/Feeder.dir/build
-.PHONY : Feeder/fast
+Nozzle/fast:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/build
+.PHONY : Nozzle/fast
 
-Feeder.o: Feeder.cpp.o
-.PHONY : Feeder.o
+Nozzle.o: Nozzle.cpp.o
+.PHONY : Nozzle.o
 
 # target to build an object file
-Feeder.cpp.o:
-	cd /home/robespierre/git/textruder && $(MAKE) -f Feeder/CMakeFiles/Feeder.dir/build.make Feeder/CMakeFiles/Feeder.dir/Feeder.cpp.o
-.PHONY : Feeder.cpp.o
+Nozzle.cpp.o:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/Nozzle.cpp.o
+.PHONY : Nozzle.cpp.o
 
-Feeder.i: Feeder.cpp.i
-.PHONY : Feeder.i
+Nozzle.i: Nozzle.cpp.i
+.PHONY : Nozzle.i
 
 # target to preprocess a source file
-Feeder.cpp.i:
-	cd /home/robespierre/git/textruder && $(MAKE) -f Feeder/CMakeFiles/Feeder.dir/build.make Feeder/CMakeFiles/Feeder.dir/Feeder.cpp.i
-.PHONY : Feeder.cpp.i
+Nozzle.cpp.i:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/Nozzle.cpp.i
+.PHONY : Nozzle.cpp.i
 
-Feeder.s: Feeder.cpp.s
-.PHONY : Feeder.s
+Nozzle.s: Nozzle.cpp.s
+.PHONY : Nozzle.s
 
 # target to generate assembly for a file
-Feeder.cpp.s:
-	cd /home/robespierre/git/textruder && $(MAKE) -f Feeder/CMakeFiles/Feeder.dir/build.make Feeder/CMakeFiles/Feeder.dir/Feeder.cpp.s
-.PHONY : Feeder.cpp.s
+Nozzle.cpp.s:
+	cd /home/robespierre/git/textruder && $(MAKE) -f Nozzle/CMakeFiles/Nozzle.dir/build.make Nozzle/CMakeFiles/Nozzle.dir/Nozzle.cpp.s
+.PHONY : Nozzle.cpp.s
 
 # Help Target
 help:
@@ -139,12 +139,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Feeder"
+	@echo "... Nozzle"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Feeder.o"
-	@echo "... Feeder.i"
-	@echo "... Feeder.s"
+	@echo "... Nozzle.o"
+	@echo "... Nozzle.i"
+	@echo "... Nozzle.s"
 .PHONY : help
 
 

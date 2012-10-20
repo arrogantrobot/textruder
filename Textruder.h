@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include "CellularAutomaton/CellularAutomaton.h"
-#include "textruder/Textruder.h"
+#include "Feeder/Feeder.h"
+#include "Nozzle/Nozzle.h"
 
 class Textruder {
 public:
@@ -10,8 +10,8 @@ public:
     ~Textruder();
 
 private:
-    Textruder *text;
-    CellularAutomaton *ca;
+    Feeder *feeder;
+    Nozzle *nozzle;
     char getChar();
     void printRow(const std::vector<int>& row);
 };

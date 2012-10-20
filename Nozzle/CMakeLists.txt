@@ -1,2 +1,3 @@
 add_library(Nozzle
-    Nozzle.cpp)
+    Nozzle.cpp
+)

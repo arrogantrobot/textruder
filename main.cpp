@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
 #include "Textruder.h"
 
 int main(int argc, char * argv[]) {

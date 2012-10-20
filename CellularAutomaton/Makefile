@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rob/git/clodca
+CMAKE_SOURCE_DIR = /home/robespierre/git/textruder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rob/git/clodca
+CMAKE_BINARY_DIR = /home/robespierre/git/textruder
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -66,14 +66,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/rob/git/clodca && $(CMAKE_COMMAND) -E cmake_progress_start /home/rob/git/clodca/CMakeFiles /home/rob/git/clodca/CellularAutomaton/CMakeFiles/progress.marks
-	cd /home/rob/git/clodca && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rob/git/clodca/CMakeFiles 0
+	cd /home/robespierre/git/textruder && $(CMAKE_COMMAND) -E cmake_progress_start /home/robespierre/git/textruder/CMakeFiles /home/robespierre/git/textruder/CellularAutomaton/CMakeFiles/progress.marks
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robespierre/git/textruder/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/rob/git/clodca && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/clean
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/clean
 .PHONY : clean
 
 # The main clean target
@@ -82,22 +82,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/rob/git/clodca && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/preinstall
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/rob/git/clodca && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/preinstall
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/rob/git/clodca && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/robespierre/git/textruder && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 CellularAutomaton/CMakeFiles/cellular_automaton.dir/rule:
-	cd /home/rob/git/clodca && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/CMakeFiles/cellular_automaton.dir/rule
+	cd /home/robespierre/git/textruder && $(MAKE) -f CMakeFiles/Makefile2 CellularAutomaton/CMakeFiles/cellular_automaton.dir/rule
 .PHONY : CellularAutomaton/CMakeFiles/cellular_automaton.dir/rule
 
 # Convenience name for target.
@@ -106,7 +106,7 @@ cellular_automaton: CellularAutomaton/CMakeFiles/cellular_automaton.dir/rule
 
 # fast build rule for target.
 cellular_automaton/fast:
-	cd /home/rob/git/clodca && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/build
+	cd /home/robespierre/git/textruder && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/build
 .PHONY : cellular_automaton/fast
 
 CellularAutomaton.o: CellularAutomaton.cpp.o
@@ -114,7 +114,7 @@ CellularAutomaton.o: CellularAutomaton.cpp.o
 
 # target to build an object file
 CellularAutomaton.cpp.o:
-	cd /home/rob/git/clodca && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.o
+	cd /home/robespierre/git/textruder && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.o
 .PHONY : CellularAutomaton.cpp.o
 
 CellularAutomaton.i: CellularAutomaton.cpp.i
@@ -122,7 +122,7 @@ CellularAutomaton.i: CellularAutomaton.cpp.i
 
 # target to preprocess a source file
 CellularAutomaton.cpp.i:
-	cd /home/rob/git/clodca && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.i
+	cd /home/robespierre/git/textruder && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.i
 .PHONY : CellularAutomaton.cpp.i
 
 CellularAutomaton.s: CellularAutomaton.cpp.s
@@ -130,7 +130,7 @@ CellularAutomaton.s: CellularAutomaton.cpp.s
 
 # target to generate assembly for a file
 CellularAutomaton.cpp.s:
-	cd /home/rob/git/clodca && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.s
+	cd /home/robespierre/git/textruder && $(MAKE) -f CellularAutomaton/CMakeFiles/cellular_automaton.dir/build.make CellularAutomaton/CMakeFiles/cellular_automaton.dir/CellularAutomaton.cpp.s
 .PHONY : CellularAutomaton.cpp.s
 
 # Help Target
@@ -156,6 +156,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/rob/git/clodca && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/robespierre/git/textruder && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

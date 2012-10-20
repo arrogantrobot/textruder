@@ -3,9 +3,11 @@
 Nozzle::Nozzle(int w) {
     width = (w > 0) ? w : 1;
     for (int i = 0; i < width; i++)
-        row.push_back(true);
+        row.push_back(1);
 }
 
-const std::vector<bool>& Nozzle::getRow() {
+Nozzle::~Nozzle() {}
+
+const std::vector<int>& Nozzle::getRow() {
     return row;
 }

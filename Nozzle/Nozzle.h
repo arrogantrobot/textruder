@@ -1,11 +1,13 @@
 #pragma once
 
+#include <vector>
+
 class Nozzle {
 public:
-    virtual Nozzle(int width);
+    Nozzle(int w);
     virtual ~Nozzle();
-    virtual const std::vector<bool>& getRow();
+    virtual const std::vector<int>& getRow();
 protected:
     int width;
-    std::vector<bool> row;
+    std::vector<int> row;
 };
