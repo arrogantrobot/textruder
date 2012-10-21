@@ -15,8 +15,8 @@ public:
     };
     ~Feeder();
     char getChar();
-    //void addLine(const std::string& line);
     bool isEndOfInput();
+    bool isCharRemaining();
 
 private:
     std::queue<char> text;

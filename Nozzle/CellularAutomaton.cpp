@@ -90,17 +90,20 @@ int CellularAutomaton::getRandomRule() {
     return ruleBank[rand() % NUM_RULES];
 }
 
-void CellularAutomaton::calcNextRow() {
-
+void CellularAutomaton::update() {
+    calcNextRow();
     if (resetRequired()) {
         resetCells();
         changeRule(getRandomRule());
+        calcNextRow();
     }
 
     if (ruleChangeRequired()) {
         changeRule(getRandomRule());
     }
+}
 
+void CellularAutomaton::calcNextRow() {
     for (int i = 0; i < width; i++) {
         newCells[i] = ((rule & mask[getCell(i)]) >= 1) ? CELL_ON : CELL_OFF;
     }
@@ -112,7 +115,7 @@ void CellularAutomaton::calcNextRow() {
 }
 
 const std::vector<int>& CellularAutomaton::getRow() {
-    calcNextRow();
+    update();
     return cells;
 }
 

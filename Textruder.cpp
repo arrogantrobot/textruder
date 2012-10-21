@@ -12,6 +12,9 @@ void Textruder::run() {
         printRow(nozzle->getRow());
         //usleep(50000);
     }
+    if (feeder->isCharRemaining()) {
+        printRow(nozzle->getRow());
+    }
 }
 
 Textruder::~Textruder() {

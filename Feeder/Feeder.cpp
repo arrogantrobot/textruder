@@ -2,17 +2,7 @@
 
 Feeder::~Feeder() {}
 
-/*void Feeder::load() {
-    std::string line;
-    if (input.good()) {
-        getline(input, line);
-        addLine(line);
-    } else {
-        endOfInput = true;
-    }
-}*/
-
-void Feeder::load() {//const std::string& line) {
+void Feeder::load() {
     int read_ahead = READ_AHEAD;
     for (unsigned int i = 0; i < read_ahead; i++) {
         if (!input->eof()) {
@@ -33,7 +23,11 @@ void Feeder::load() {//const std::string& line) {
 
 char Feeder::getChar() {
     if (text.empty()) {
-        load();
+        if (endOfInput) {
+            return ' ';
+        } else {
+            load();
+        }
     }
     char a = text.front();
     text.pop();
@@ -42,4 +36,8 @@ char Feeder::getChar() {
 
 bool Feeder::isEndOfInput() {
     return endOfInput;
+}
+
+bool Feeder::isCharRemaining() {
+    return !text.empty();
 }
