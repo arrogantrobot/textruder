@@ -4,6 +4,19 @@
 #include <stdlib.h>
 #include "Textruder.h"
 #include <getopt.h>
+#include <ncurses.h>
+#include <sys/ioctl.h>
+
+int getTerminalWidth() {
+    /*
+    int x,y;
+    initscr();
+    getmaxyx(stdscr,x,y);
+    return x;*/
+    struct winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    return w.ws_col;
+}
 
 int main(int argc, char * argv[]) {
     int optionChar;
@@ -22,7 +35,12 @@ int main(int argc, char * argv[]) {
         }
     }
     
-    int width = atoi(wide.c_str());
+    int width;
+    if (wide == "") {
+        width = getTerminalWidth();
+    } else {
+        width = atoi(wide.c_str());
+    }
     std::istream* input = &std::cin;
     std::ostream* output = &std::cout;
 

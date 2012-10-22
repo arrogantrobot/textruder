@@ -5,7 +5,7 @@
 #include <fstream>
 #include <queue>
 
-#define READ_AHEAD 100;
+#define READ_AHEAD 1000;
 
 class Feeder {
 public:

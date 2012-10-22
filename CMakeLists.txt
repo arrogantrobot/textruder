@@ -8,6 +8,8 @@ add_library(txtruder
 target_link_libraries(txtruder
     Feeder
     Nozzle
+    rt
+    tinfo
 )
 add_executable(textruder main.cpp)
 target_link_libraries(textruder 

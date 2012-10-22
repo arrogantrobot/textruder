@@ -1,5 +1,6 @@
 #pragma once
 
+#include <sys/time.h>
 #include <iostream>
 #include "Feeder/Feeder.h"
 #include "Nozzle/Nozzle.h"
@@ -14,6 +15,8 @@ public:
 private:
     std::istream *input;
     std::ostream *output;
+    int usec_per_frame;
+    bool endOfInput;
     Feeder *feeder;
     Nozzle *nozzle;
     char getChar();
