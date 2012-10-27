@@ -23,6 +23,10 @@ void Textruder::run() {
     }
 }
 
+void Textruder::setDelayMSec(int delay) {
+    usec_per_frame = delay;
+}
+
 Textruder::~Textruder() {
     if (feeder != NULL)
         delete feeder;

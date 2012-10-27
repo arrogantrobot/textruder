@@ -11,6 +11,7 @@ public:
     Textruder(std::istream *in, std::ostream *out, int width);
     ~Textruder();
     void run();
+    void setDelayMSec(int delay);
 
 private:
     std::istream *input;

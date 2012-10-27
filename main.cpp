@@ -4,15 +4,9 @@
 #include <stdlib.h>
 #include "Textruder.h"
 #include <getopt.h>
-#include <ncurses.h>
 #include <sys/ioctl.h>
 
 int getTerminalWidth() {
-    /*
-    int x,y;
-    initscr();
-    getmaxyx(stdscr,x,y);
-    return x;*/
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     return w.ws_col;
@@ -56,6 +50,9 @@ int main(int argc, char * argv[]) {
     }
 
     Textruder textruder(input, output, width);
+    if (outputFile != "") {
+        textruder.setDelayMSec(0);
+    }
     textruder.run();
 
     if (inputFile != "") {
