@@ -7,8 +7,11 @@ Build it
 ==========
 
 git clone git@github.com:arrogantrobot/textruder.git
+
 cd textruder
+
 cmake .
+
 make
 
 done!
