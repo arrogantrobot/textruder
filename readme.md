@@ -19,7 +19,9 @@ done!
 Use it
 =========
 
-./textruder -i subcellular_automaton.txt
+with input from a file
+
+./textruder -i my_text_file.txt
 
 or from stdin
 
@@ -29,7 +31,7 @@ The default width matches the terminal. This may be overridden:
 
 yes | ./textruder -w 20
 
-Example
+Example Output
 ========
 
 
