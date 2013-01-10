@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
@@ -27,8 +26,11 @@ void CellularAutomaton::initialize() {
 CellularAutomaton::~CellularAutomaton() { }
 
 void CellularAutomaton::populateMask() {
-    for (int i = 0; i < 8; i++)
-        mask.push_back((int) pow(2,i));
+	int mask_value = 1;
+    for (int i = 0; i < 8; i++) {
+        mask.push_back(mask_value);
+		mask_value <<= 1;
+	}
 }
 
 void CellularAutomaton::populateCells() {
@@ -56,25 +58,21 @@ int CellularAutomaton::getCell(int i) {
         if (cells[lastCell] == CELL_ON)
             idx |= 1;
     } else {
-        if (cells[(i - 1) % width] == CELL_ON) {
+        if (cells[(i - 1) % width] == CELL_ON) 
             idx |= 1;
-        }
     }
 
     //same cell
-    if (cells[i % width] == CELL_ON) {
+    if (cells[i % width] == CELL_ON)
         idx |= 2;
-    }
 
     //higher cell
     if (i == (lastCell)) {
-        if (cells[0] == CELL_ON) {
+        if (cells[0] == CELL_ON) 
             idx |= 4;
-        }
     } else {
-        if (cells[(i + 1) % width] == CELL_ON) {
+        if (cells[(i + 1) % width] == CELL_ON)
             idx |= 4;
-        }
     }
     return idx;
 }
