@@ -26,11 +26,11 @@ void CellularAutomaton::initialize() {
 CellularAutomaton::~CellularAutomaton() { }
 
 void CellularAutomaton::populateMask() {
-	int mask_value = 1;
+    int mask_value = 1;
     for (int i = 0; i < 8; i++) {
         mask.push_back(mask_value);
-		mask_value <<= 1;
-	}
+        mask_value <<= 1;
+    }
 }
 
 void CellularAutomaton::populateCells() {
