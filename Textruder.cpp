@@ -38,12 +38,16 @@ void Textruder::run() {
         usec = (ts2.tv_nsec - ts1.tv_nsec) / NANOSECONDS_PER_MICROSECOND;
         if (usec < 0 || usec > usec_per_frame) {
             usec = 0;
-            printf("Time to print the last row was greater than time per frame.\n");
+            if (usec_per_frame > 0)
+                printf("Time to print the last row was greater than time per frame.\n");
         }
         long waitTime = (usec_per_frame - usec) * 1000;
         sleepTime.tv_nsec = waitTime;
         while(nanosleep(&sleepTime, &sleepTime) == -1) {}
     }
+
+    //send an EOF down the pipe when done
+    *output << EOF;
 }
 
 void Textruder::setDelayUSec(int delay) {
