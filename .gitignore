@@ -2,6 +2,7 @@
 *.o
 *.a
 textruder
+testruder
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
