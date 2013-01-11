@@ -8,12 +8,6 @@
 #define DEFAULT_RATE 30
 #define ABSURD_RATE 1000
 #define TEST_INPUT "license.txt"
-#define FIRST_ROW_WIDTH 6
-#define SECOND_ROW_WIDTH 0
-#define THIRD_ROW_WIDTH 3
-#define FIRST_ROW_ABSURD_WIDTH 0
-#define SECOND_ROW_ABSURD_WIDTH 6
-#define THIRD_ROW_ABSURD_WIDTH 0
 
 TEST(TextruderTest, NozzleNormal) {
     Nozzle nozzle(DEFAULT_WIDTH);
