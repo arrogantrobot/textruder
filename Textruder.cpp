@@ -38,7 +38,7 @@ void Textruder::run() {
         usec = (ts2.tv_nsec - ts1.tv_nsec) / NANOSECONDS_PER_MICROSECOND;
         if (usec < 0 || usec > usec_per_frame) {
             usec = 0;
-            printf("ran out of time!\n");
+            printf("Time to print the last row was greater than time per frame.\n");
         }
         long waitTime = (usec_per_frame - usec) * 1000;
         sleepTime.tv_nsec = waitTime;
