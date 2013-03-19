@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <unistd.h>
 #include <sys/ioctl.h>
 
 #include "Textruder.h"
@@ -28,14 +29,16 @@ void usage() {
 int main(int argc, char * argv[]) {
     int optionChar;
     int rows_per_second = DEFAULT_ROWS_PER_SECOND;
-    std::string inputFile = "", outputFile = "", wide;
-    while ((optionChar = getopt(argc,argv,"i:o:w:r:h")) != -1) {
+    std::string inputFile = "", outputFile = "", wide, lines;
+    while ((optionChar = getopt(argc,argv,"i:o:w:l:r:h")) != -1) {
         switch(optionChar) {
             case 'i':   inputFile = optarg; //input
                         break;
             case 'o':   outputFile = optarg; //output
                         break;
             case 'w':   wide = optarg; //width
+                        break;
+            case 'l':   lines = optarg; //width
                         break;
             case 'r':   rows_per_second = atoi(optarg); //rate
                         break;
@@ -51,6 +54,10 @@ int main(int argc, char * argv[]) {
         width = getTermWidth();
     } else {
         width = atoi(wide.c_str());
+    }
+    int linecount = -1;
+    if (lines != "") {
+        linecount = atoi(lines.c_str());
     }
 
     //initialize input and output streams
@@ -69,7 +76,7 @@ int main(int argc, char * argv[]) {
     }
 
     //create a textruder and remove delay if outputting to a file
-    textruder::Textruder textruder(input, output, width, rows_per_second);
+    textruder::Textruder textruder(input, output, width, rows_per_second, linecount);
     if (outputFile != "") {
         textruder.setDelayUSec(0);
     }

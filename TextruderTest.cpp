@@ -66,7 +66,7 @@ TEST(TextruderTest, TextruderNormal) {
     std::stringstream coutBuffer;
     std::streambuf *sbuf = output->rdbuf();
     std::cout.rdbuf(coutBuffer.rdbuf());
-    textruder::Textruder textruder(input, output, DEFAULT_WIDTH, DEFAULT_RATE);
+    textruder::Textruder textruder(input, output, DEFAULT_WIDTH, DEFAULT_RATE, -1);
     textruder.setDelayUSec(0);
     textruder.run();
 
@@ -86,7 +86,7 @@ TEST(TextruderTest, TextruderAbsurd) {
     std::ostream* output = &std::cout;
     std::streambuf *sbuf = output->rdbuf();
     std::cout.rdbuf(coutBuffer.rdbuf());
-    textruder::Textruder textruder(input, output, ABSURD_WIDTH, ABSURD_RATE);
+    textruder::Textruder textruder(input, output, ABSURD_WIDTH, ABSURD_RATE, -1);
     textruder.setDelayUSec(0);
     textruder.run();
 

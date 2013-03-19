@@ -21,7 +21,7 @@ public:
      * @param width int, width in characters
      */
     Textruder(std::istream *in, std::ostream *out, int width, 
-            int _row_per_second);
+            int _row_per_second, int lines);
 
     /**
      * Destructor
@@ -47,6 +47,8 @@ private:
      */
     std::istream *input;
     std::ostream *output;
+
+    int lines;
 
     long usec_per_frame;
     bool endOfInput;

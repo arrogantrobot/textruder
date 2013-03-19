@@ -6,10 +6,11 @@
 using namespace textruder;
 
 Textruder::Textruder(std::istream *in, std::ostream *out, int width,
-        int rows_per_second) {
+        int rows_per_second, int _lines) {
     input = in;
     output = out;
     endOfInput = false;
+    lines = _lines;
     usec_per_frame = MICROSECONDS_PER_SECOND / rows_per_second;
     nozzle = new ca::CellularAutomaton(width);
 }
@@ -24,7 +25,8 @@ void Textruder::run() {
     sleepTime.tv_sec = remainingSleep.tv_nsec = 0;
     remainingSleep.tv_sec = 0;
     long usec = 0;
-
+    long linecount = 0;
+    bool hit_limit = false;
     //loop until EOF is read from input
     while (!endOfInput) {
 
@@ -44,10 +46,13 @@ void Textruder::run() {
         long waitTime = (usec_per_frame - usec) * 1000;
         sleepTime.tv_nsec = waitTime;
         while(nanosleep(&sleepTime, &sleepTime) == -1) {}
+        if (linecount != -1 && linecount++ > lines) {
+            hit_limit = true;
+            break;
+        }
     }
-
     //send an EOF down the pipe when done
-    *output << EOF;
+    if(!hit_limit) *output << EOF;
 }
 
 void Textruder::setDelayUSec(int delay) {
